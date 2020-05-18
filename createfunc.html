@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Creating a Function</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+
+      <nav class="navbar navbar-expand-sm fixed-top fk">
+        <div class="container " style="max-width : 100% ">
+  <a class="navbar-brand" href="index.html">
+    <img  src="logo.png" alt="Logo" style="width:120px;">
+  </a>
+          <span class="navbar-text navbar-brand">DTutorials</span>
+          <button class="navbar-toggler" data-toggle="collapse" data-target = "#t_id">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse fcolor" id="t_id">
+            <ul class="navbar-nav text-center ml-auto " >
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-3" href="#" id="navbardrop" data-toggle="dropdown">
+                  Topics
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item " href="plsql.html">PL/SQL</a>
+                  <a class="dropdown-item " href="sp.html">Stored Procedure</a>
+                  <a class="dropdown-item " href="sf.html">Stored Function</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link ml-3" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+    </nav>
+
+      <!-- sidebar & content -->
+
+      <div class="w3-sidebar w3-bar-block w3-card-4 w3-amber" style="width:20%; ">
+        <header class="w3-container pb-3" >
+          <h3 class="text-center w3-green p-2" style="box-shadow: 0px 7px 10px #666666; ">Sub-Topics</h3>
+        </header>
+        <a href="sf.html" class="w3-bar-item w3-button w3-hover-khaki "> Introduction</a>
+        <button class="w3-btn w3-block w3-amber w3-left-align w3-hover-khaki w3-khaki" type="button" data-toggle="collapse" data-target="#para">&#10095; Creating a Function <i class="fa fa-caret-down"></i></button>
+          <div id="para" class="collapse">
+            <a class="w3-bar-item w3-button w3-white" href="createfunc.html#syntax">Syntax</a>
+            <a class="w3-bar-item w3-button w3-white" href="createfunc.html#example">Examples</a>
+          </div>
+          <button class="w3-btn w3-block w3-amber w3-left-align w3-hover-khaki" type="button" data-toggle="collapse" data-target="#call"> Calling a Function <i class="fa fa-caret-down"></i></button>
+            <div id="call" class="collapse">
+              <a class="w3-bar-item w3-button w3-white" href="callfunc.html#syntax">Syntax</a>
+              <a class="w3-bar-item w3-button w3-white" href="callfunc.html#example">Examples</a>
+            </div>
+            <a href="recfunc.html" class="w3-bar-item w3-button w3-hover-khaki "> Recursive Function</a>
+        </div>
+        <div id="syntax">
+
+        </div>
+
+
+        <div style="margin-left:21%;  margin-top: 4.5%; padding-top: 3%; padding-left: 3%; padding-right: 3%">
+          <div class="w3-container">
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="sf.html" class="w3-button">&#10094; Previous</a>
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="callfunc.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <div class="w3-display-container" style=" max-width: 100%;"  >
+              <h1 class="text-center text-capitalize text-success cont" style="font-family: Sofia; max-width: 40%; margin-left: 30%">Creating a Function</h1>
+            </div>
+          <hr>
+          <p>A standalone function is created using the <b>CREATE FUNCTION</b> statement. The simplified syntax for the <b>CREATE OR REPLACE PROCEDURE</b> statement is as follows &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          CREATE [OR REPLACE] FUNCTION function_name
+          [(parameter_name [IN | OUT | IN OUT] type [, ...])]
+          RETURN return_datatype
+          {IS | AS}
+          BEGIN
+             &lt; function_body &gt;
+          END [function_name];
+          </pre>
+          <p>Where,</p>
+          <ul class="w3-card pl-5 py-3 mx-5">
+          <li><p><i>function-name</i> specifies the name of the function.</p></li>
+          <li><p>[OR REPLACE] option allows the modification of an existing function.</p></li>
+          <li><p>The optional parameter list contains name, mode and types of the parameters. IN represents the value that will be passed from outside and OUT represents the parameter that will be used to return a value outside of the procedure.</p></li>
+          <li><p>The function must contain a <b>return</b> statement.</p></li>
+          <li><p>The <i>RETURN</i> clause specifies the data type you are going to return from the function.</p></li>
+          <li><p><i>function-body</i> contains the executable part.</p></li>
+          <li id="example"><p>The AS keyword is used instead of the IS keyword for creating a standalone function.</p></li>
+          </ul>
+          <h3>Example</h3>
+          <p>The following example illustrates how to create and call a standalone function. This function returns the total number of CUSTOMERS in the customers table.</p>
+          <p>We will use the CUSTOMERS table, which we had created in the <a href="/plsql/plsql_variable_types.htm">PL/SQL Variables</a> chapter &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          Select * from customers;
+
+          +----+----------+-----+-----------+----------+
+          | ID | NAME     | AGE | ADDRESS   | SALARY   |
+          +----+----------+-----+-----------+----------+
+          |  1 | Ramesh   |  32 | Ahmedabad |  2000.00 |
+          |  2 | Khilan   |  25 | Delhi     |  1500.00 |
+          |  3 | kaushik  |  23 | Kota      |  2000.00 |
+          |  4 | Chaitali |  25 | Mumbai    |  6500.00 |
+          |  5 | Hardik   |  27 | Bhopal    |  8500.00 |
+          |  6 | Komal    |  22 | MP        |  4500.00 |
+          +----+----------+-----+-----------+----------+
+          </pre>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          CREATE OR REPLACE FUNCTION totalCustomers
+          RETURN number IS
+             total number(2) := 0;
+          BEGIN
+             SELECT count(*) into total
+             FROM customers;
+
+             RETURN total;
+          END;
+          /
+          </pre>
+          <p>When the above code is executed using the SQL prompt, it will produce the following result &minus;</p>
+          <pre class="w3-card-4 w3-grey mx-5">
+
+          Function created.
+          </pre>
+          <br>
+          <h3>ANOTHER EXAMPLE</h3>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+            CREATE OR REPLACE FUNCTION adder(n1 in number, n2 in number)
+            RETURN number
+            IS
+              n3 number(8);
+            BEGIN
+              n3 :=n1+n2;
+              return n3;
+            END;
+            /
+          </pre>
+          <p>OUTPUT</p>
+          <pre class="w3-card-4 w3-grey mx-5">
+
+          Function created.
+          </pre>
+        </div>
+        <div class="w3-bar ">
+          <a class="nav-link w3-hover-grey w3-left w3-khaki" href="sf.html" class="w3-button">&#10094; Previous</a>
+          <a class="nav-link w3-hover-grey w3-right w3-khaki" href="callfunc.html" class="w3-button w3-right">Next &#10095;</a>
+        </div>
+        <br>
+        </div>
+</div>
+<footer>
+          <p class="mt-3 text-center" style="margin-left:20%;">Author: Deepam Priyadarshi<br>
+Reg_no:- 19BPS1117<br>
+          deepam.priyadarshi2019@vitstudent.ac.in</p>
+        </footer>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

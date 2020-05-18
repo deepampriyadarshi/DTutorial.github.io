@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>PL/SQL-Loops</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+
+      <nav class="navbar navbar-expand-sm fixed-top fk">
+        <div class="container " style="max-width : 100% ">
+  <a class="navbar-brand" href="index.html">
+    <img  src="logo.png" alt="Logo" style="width:120px;">
+  </a>
+          <span class="navbar-text navbar-brand">DTutorials</span>
+          <button class="navbar-toggler" data-toggle="collapse" data-target = "#t_id">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse fcolor" id="t_id">
+            <ul class="navbar-nav text-center ml-auto " >
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-3" href="#" id="navbardrop" data-toggle="dropdown">
+                  Topics
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item " href="plsql.html">PL/SQL</a>
+                  <a class="dropdown-item " href="sp.html">Stored Procedure</a>
+                  <a class="dropdown-item " href="sf.html">Stored Function</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link ml-3" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+    </nav>
+
+      <!-- sidebar & content -->
+
+      <div class="w3-sidebar w3-bar-block w3-card-4 w3-amber" style="width:20%; ">
+        <header class="w3-container pb-3" >
+          <h3 class="text-center w3-green p-2" style="box-shadow: 0px 7px 10px #666666; ">PL/SQL Sub-Topics</h3>
+        </header>
+        <a href="plsql.html" class="w3-bar-item w3-button w3-hover-khaki">Overview</a>
+        <a href="basicsyn.html" class="w3-bar-item w3-button w3-hover-khaki">Basic Syntax</a>
+        <a href="dttyp.html" class="w3-bar-item w3-button w3-hover-khaki">Data Types</a>
+        <a href="var.html" class="w3-bar-item w3-button w3-hover-khaki ">Variables</a>
+        <a href="loop.html" class="w3-bar-item w3-button w3-hover-khaki w3-khaki">&#10095; Loops</a>
+        <!-- Dropdown
+        <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red">Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="w3-dropdown-content w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+          </div>
+        </div> -->
+        </div>
+
+        <div style="margin-left:21%;  margin-top: 4.5%; padding-top: 3%; padding-left: 3%; padding-right: 3%">
+          <div class="w3-container">
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="var.html" class="w3-button">&#10094; Previous</a>
+            </div>
+            <div class="container" >
+              <h1 class="text-center text-capitalize text-success cont" style="font-family: Sofia; max-width: 40%; margin-left: 30%">Loops</h1>
+            </div>
+          <hr>
+          <p>In this chapter, we will discuss Loops in PL/SQL. There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.</p>
+          <p>Programming languages provide various control structures that allow for more complicated execution paths.</p>
+          <p>A loop statement allows us to execute a statement or group of statements multiple times and following is the general form of a loop statement in most of the programming languages &minus;</p>
+          <img class="my-4"src="loop_arch.jpg" alt="Loop Architecture" style=" margin-left: 30%; box-shadow: 2px 2px 15px #666666"/>
+          <p>PL/SQL provides the following types of loop to handle the looping requirements. Click the following links to check their detail.</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4">
+          <tr>
+          <th style="text-align:center;">S.No</th>
+          <th style="text-align:center;">Loop Type &amp; Description</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">1</td>
+          <td>PL/SQL Basic LOOP
+          <p>In this loop structure, sequence of statements is enclosed between the LOOP and the END LOOP statements. At each iteration, the sequence of statements is executed and then control resumes at the top of the loop.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">2</td>
+          <td>PL/SQL WHILE LOOP
+          <p>Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">3</td>
+          <td>PL/SQL FOR LOOP
+          <p>Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">4</td>
+          <td>Nested loops in PL/SQL
+          <p>You can use one or more loop inside any another basic loop, while, or for loop.</p></td>
+          </tr>
+          </table>
+          <h2>Labeling a PL/SQL Loop</h2>
+          <p>PL/SQL loops can be labeled. The label should be enclosed by double angle brackets (&lt;&lt; and &gt;&gt;) and appear at the beginning of the LOOP statement. The label name can also appear at the end of the LOOP statement. You may use the label in the EXIT statement to exit from the loop.</p>
+          <p>The following program illustrates the concept &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          DECLARE
+             i number(1);
+             j number(1);
+          BEGIN
+             &lt;&lt; outer_loop &gt;&gt;
+             FOR i IN 1..3 LOOP
+                &lt;&lt; inner_loop &gt;&gt;
+                FOR j IN 1..3 LOOP
+                   dbms_output.put_line('i is: '|| i || ' and j is: ' || j);
+                END loop inner_loop;
+             END loop outer_loop;
+          END;
+          /
+          </pre>
+          <p>When the above code is executed at the SQL prompt, it produces the following result &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          i is: 1 and j is: 1
+          i is: 1 and j is: 2
+          i is: 1 and j is: 3
+          i is: 2 and j is: 1
+          i is: 2 and j is: 2
+          i is: 2 and j is: 3
+          i is: 3 and j is: 1
+          i is: 3 and j is: 2
+          i is: 3 and j is: 3
+
+          PL/SQL procedure successfully completed.
+          </pre>
+          <h2>The Loop Control Statements</h2>
+          <p>Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.</p>
+          <p>PL/SQL supports the following control statements. Labeling loops also help in taking the control outside a loop. Click the following links to check their details.</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4">
+          <tr>
+          <th style="text-align:center;">S.No</th>
+          <th style="text-align:center;">Control Statement &amp; Description</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">1</td>
+          <td><a href="/plsql/plsql_exit_statement.htm" title="Exit statement in PL/SQL">EXIT statement</a>
+          <p>The Exit statement completes the loop and control passes to the statement immediately after the END LOOP.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">2</td>
+          <td><a href="/plsql/plsql_continue_statement.htm" title="Continue statement in PL/SQL">CONTINUE statement</a>
+          <p>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">3</td>
+          <td><a href="/plsql/plsql_goto_statement.htm" title="GOTO statement in PL/SQL">GOTO statement</a>
+          <p>Transfers control to the labeled statement. Though it is not advised to use the GOTO statement in your program.</p></td>
+          </tr>
+          </table>
+
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="var.html" class="w3-button">&#10094; Previous</a>
+            </div>
+            <br>
+        </div>
+      </div>
+        <footer>
+          <p class="mt-3 text-center" style="margin-left:20%;">Author: Deepam Priyadarshi<br>
+Reg_no:- 19BPS1117<br>
+          deepam.priyadarshi2019@vitstudent.ac.in</p>
+        </footer>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

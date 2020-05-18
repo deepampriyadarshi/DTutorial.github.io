@@ -1,0 +1,13 @@
+.list{
+  margin-left: 5%;
+}
+.w3-Sofia{
+  font-family: Sofia;
+}
+.cont{
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px #e74c3c;
+  transition: all 0.3s ease-in;
+  -webkit-transition:  all 0.3s ease-in;
+  -moz-transition:  all 0.3s ease-in;
+}

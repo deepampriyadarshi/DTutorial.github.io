@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Stored Procedure</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+
+      <nav class="navbar navbar-expand-sm fixed-top fk">
+        <div class="container " style="max-width : 100% ">
+  <a class="navbar-brand" href="index.html">
+    <img  src="logo.png" alt="Logo" style="width:120px;">
+  </a>
+          <span class="navbar-text navbar-brand">DTutorials</span>
+          <button class="navbar-toggler" data-toggle="collapse" data-target = "#t_id">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse fcolor" id="t_id">
+            <ul class="navbar-nav text-center ml-auto " >
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-3" href="#" id="navbardrop" data-toggle="dropdown">
+                  Topics
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item " href="plsql.html">PL/SQL</a>
+                  <a class="dropdown-item " href="sp.html">Stored Procedure</a>
+                  <a class="dropdown-item " href="sf.html">Stored Function</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link ml-3" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+    </nav>
+
+      <!-- sidebar & content -->
+
+      <div class="w3-sidebar w3-bar-block w3-card-4 w3-amber" style="width:20%; ">
+        <header class="w3-container pb-3" >
+          <h3 class="text-center w3-green p-2" style="box-shadow: 0px 7px 10px #666666; ">Sub-Topics</h3>
+        </header>
+        <a href="sp.html" class="w3-bar-item w3-button w3-hover-khaki w3-khaki">&#10095; Introduction</a>
+        <button class="w3-btn w3-block w3-amber w3-left-align w3-hover-khaki" type="button" data-toggle="collapse" data-target="#demo"> Creating a Procedure <i class="fa fa-caret-down"></i></button>
+          <div id="demo" class="collapse">
+            <a class="w3-bar-item w3-button w3-white" href="create.html#syntax">Syntax</a>
+            <a class="w3-bar-item w3-button w3-white" href="create.html#example">Examples</a>
+          </div>
+        <a href="exedel.html" class="w3-bar-item w3-button w3-hover-khaki "> Executing and Deleting</a>
+        <button class="w3-btn w3-block w3-amber w3-left-align w3-hover-khaki" type="button" data-toggle="collapse" data-target="#para"> Parameter mmode <i class="fa fa-caret-down"></i></button>
+          <div id="para" class="collapse">
+            <a class="w3-bar-item w3-button w3-white" href="para.html">Syntax</a>
+            <a class="w3-bar-item w3-button w3-white" href="para.html#example">Examples</a>
+          </div>
+          <a href="pass.html" class="w3-bar-item w3-button w3-hover-khaki "> Methods for Passing a Parameter</a>
+        </div>
+
+
+        <div style="margin-left:21%;  margin-top: 4.5%; padding-top: 3%; padding-left: 3%; padding-right: 3%">
+          <div class="w3-container">
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="create.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <div class="w3-display-container" style=" max-width: 100%;"  >
+              <h1 class="text-center text-capitalize text-success cont" style="font-family: Sofia; max-width: 40%; margin-left: 30%">Stored Procedure: Introduction</h1>
+            </div>
+          <hr>
+          <p>In this chapter, we will discuss Procedures in PL/SQL. A <b>subprogram</b> is a program unit/module that performs a particular task. These subprograms are combined to form larger programs. This is basically called the 'Modular design'. A subprogram can be invoked by another subprogram or program which is called the <b>calling program</b>.</p>
+          <p>A subprogram can be created &minus;</p>
+          <ul class="w3-card-4 pl-5 py-3 mx-5">
+          <li>At the schema level</li>
+          <li>Inside a package</li>
+          <li>Inside a PL/SQL block</li>
+          </ul>
+          <p>At the schema level, subprogram is a <b>standalone subprogram</b>. It is created with the CREATE PROCEDURE or the CREATE FUNCTION statement. It is stored in the database and can be deleted with the DROP PROCEDURE or DROP FUNCTION statement.</p>
+          <p>A subprogram created inside a package is a <b>packaged subprogram</b>. It is stored in the database and can be deleted only when the package is deleted with the DROP PACKAGE statement. We will discuss packages in the chapter <b>'PL/SQL - Packages'</b>.</p>
+          <p>PL/SQL subprograms are named PL/SQL blocks that can be invoked with a set of parameters. PL/SQL provides two kinds of subprograms &minus;</p>
+          <ul class="w3-card-4 pl-5 py-3 mx-5">
+          <li><p><b>Functions</b> &minus; These subprograms return a single value; mainly used to compute and return a value.</p></li>
+          <li><p><b>Procedures</b> &minus; These subprograms do not return a value directly; mainly used to perform an action.</p></li>
+          </ul>
+          <p>This chapter is going to cover important aspects of a <b>PL/SQL procedure</b>. We will discuss <b>PL/SQL function</b> in the next chapter.</p>
+          <h2>Parts of a PL/SQL Subprogram</h2>
+          <p>Each PL/SQL subprogram has a name, and may also have a parameter list. Like anonymous PL/SQL blocks, the named blocks will also have the following three parts &minus;</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4 py-3 ">
+          <tr>
+          <th style="text-align:center;">S.No</th>
+          <th style="text-align:center;">Parts &amp; Description</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">1</td>
+          <td><p><b>Declarative Part</b></p>
+          <p>It is an optional part. However, the declarative part for a subprogram does not start with the DECLARE keyword. It contains declarations of types, cursors, constants, variables, exceptions, and nested subprograms. These items are local to the subprogram and cease to exist when the subprogram completes execution.</p>
+          </td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">2</td>
+          <td><p><b>Executable Part</b></p>
+          <p>This is a mandatory part and contains statements that perform the designated action.</p>
+          </td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">3</td>
+          <td><p><b>Exception-handling</b></p>
+          <p>This is again an optional part. It contains the code that handles run-time errors.</p>
+          </td>
+          </tr>
+          </table>
+          <br>
+        </div>
+        <div class="w3-bar ">
+          <a class="nav-link w3-hover-grey w3-right w3-khaki" href="create.html" class="w3-button w3-right">Next &#10095;</a>
+        </div>
+        <br>
+        </div>
+</div>
+<footer>
+          <p class="mt-3 text-center" style="margin-left:20%;">Author: Deepam Priyadarshi<br>
+Reg_no:- 19BPS1117<br>
+          deepam.priyadarshi2019@vitstudent.ac.in</p>
+        </footer>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>PL/SQL-Basic Syntax</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+
+      <nav class="navbar navbar-expand-sm fixed-top fk">
+        <div class="container " style="max-width : 100% ">
+          <a class="navbar-brand" href="index.html">
+            <img  src="logo.png" alt="Logo" style="width:120px;">
+          </a>
+          <span class="navbar-text navbar-brand">DTutorials</span>
+          <button class="navbar-toggler" data-toggle="collapse" data-target = "#t_id">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+
+           <!--Links -->
+          <div class="collapse navbar-collapse fcolor" id="t_id">
+            <ul class="navbar-nav text-center ml-auto " >
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+               <!--Dropdown-->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-3 " href="#" id="navbardrop" data-toggle="dropdown">Topics</a>
+                <!-- topics -->
+                <div class="dropdown-menu">
+                  <a class="dropdown-item " href="plsql.html">PL/SQL</a>
+                  <a class="dropdown-item " href="sp.html">Stored Procedure</a>
+                  <a class="dropdown-item " href="sf.html">Stored Function</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link ml-3" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+    </nav>
+
+
+      <!-- sidebar & content -->
+
+      <div class="w3-sidebar w3-bar-block w3-card-4 w3-amber" style="width:20%; ">
+        <header class="w3-container pb-3" >
+          <h3 class="text-center w3-green p-2" style="box-shadow: 0px 7px 10px #666666; ">PL/SQL Sub-Topics</h3>
+        </header>
+        <a href="plsql.html" class="w3-bar-item w3-button w3-hover-khaki">Overview</a>
+        <a href="basicsyn.html" class="w3-bar-item w3-button w3-hover-khaki w3-khaki"> &#10095; Basic Syntax</a>
+        <a href="dttyp.html" class="w3-bar-item w3-button w3-hover-khaki">Data Types</a>
+        <a href="var.html" class="w3-bar-item w3-button w3-hover-khaki ">Variables</a>
+        <a href="loop.html" class="w3-bar-item w3-button w3-hover-khaki">Loops</a>
+        </div>
+
+        <div style="margin-left:21%;  margin-top: 4.5%; padding-top: 3%; padding-left: 3%; padding-right: 3%">
+          <div class="w3-container">
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="plsql.html" class="w3-button">&#10094; Previous</a>
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="dttyp.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <div class="container" >
+              <h1 class="text-center text-capitalize text-success cont" style="font-family: Sofia; max-width: 40%; margin-left: 30%">Basic Syntax</h1>
+            </div>
+          <hr>
+          <p>In this chapter, we will discuss the Basic Syntax of PL/SQL which is a <b>block-structured</b> language; this means that the PL/SQL programs are divided and written in logical blocks of code. Each block consists of three sub-parts &minus;</p>
+            <table class="w3-table-all w3-striped my-4 w3-card-4">
+            <tr>
+            <th style="text-align:center;">S.No</th>
+            <th style="text-align:center;">Sections &amp; Description</th>
+            </tr>
+            <tr>
+            <td style="text-align:center; vertical-align:middle;">1</td>
+            <td>
+            <p><b>Declarations</b></p>
+            <p>This section starts with the keyword <b>DECLARE</b>. It is an optional section and defines all variables, cursors, subprograms, and other elements to be used in the program.</p>
+            </td>
+            </tr>
+            <tr>
+            <td style="text-align:center; vertical-align:middle;">2</td>
+            <td>
+            <p><b>Executable Commands</b></p>
+            <p>This section is enclosed between the keywords <b>BEGIN</b> and <b>END</b> and it is a mandatory section. It consists of the executable PL/SQL statements of the program. It should have at least one executable line of code, which may be just a <b>NULL command</b> to indicate that nothing should be executed.</p>
+            </td>
+            </tr>
+            <tr>
+            <td style="text-align:center; vertical-align:middle;">3</td>
+            <td><p><b>Exception Handling</b></p>
+            <p>This section starts with the keyword <b>EXCEPTION</b>. This optional section contains <b>exception(s)</b> that handle errors in the program.</p></td>
+            </tr>
+            </table>
+            <p>Every PL/SQL statement ends with a semicolon (;). PL/SQL blocks can be nested within other PL/SQL blocks using <b>BEGIN</b> and <b>END</b>. Following is the basic structure of a PL/SQL block &minus;</p>
+            <pre class="w3-card-4 w3-light-grey mx-5">
+
+            DECLARE
+               &lt;declarations section&gt;
+            BEGIN
+               &lt;executable command(s)&gt;
+            EXCEPTION
+               &lt;exception handling&gt;
+            END;
+            </pre>
+            <h2>The 'Hello World' Example</h2>
+            <pre class="w3-card-4 w3-light-grey mx-5">
+
+            DECLARE
+               message  varchar2(20):= 'Hello, World!';
+            BEGIN
+               dbms_output.put_line(message);
+            END;
+            /
+            </pre>
+            <p>The <b>end;</b> line signals the end of the PL/SQL block. To run the code from the SQL command line, you may need to type / at the beginning of the first blank line after the last line of the code. When the above code is executed at the SQL prompt, it produces the following result &minus;</p>
+            <pre class="w3-card-4 w3-light-grey mx-5">
+
+            Hello World
+
+            PL/SQL procedure successfully completed.
+            </pre>
+            <h2>The PL/SQL Identifiers</h2>
+            <p>PL/SQL identifiers are constants, variables, exceptions, procedures, cursors, and reserved words. The identifiers consist of a letter optionally followed by more letters, numerals, dollar signs, underscores, and number signs and should not exceed 30 characters.</b>
+            <p>By default, <b>identifiers are not case-sensitive</b>. So you can use <b>integer</b> or <b>INTEGER</b> to represent a numeric value. You cannot use a reserved keyword as an identifier.</p>
+            <h2>The PL/SQL Delimiters</h2>
+            <p>A delimiter is a symbol with a special meaning. Following is the list of delimiters in PL/SQL &minus;</p>
+            <table class="w3-table-all w3-striped my-4 w3-card-4">"table table-bordered">
+            <tr>
+            <th style="text-align:center;">Delimiter</th>
+            <th style="text-align:center;">Description</th>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>+, -, *, /</b></td>
+            <td>Addition, subtraction/negation, multiplication, division</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>%</b></td>
+            <td>Attribute indicator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>'</b></td>
+            <td>Character string delimiter</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>.</b></td>
+            <td>Component selector</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>(,)</b></td>
+            <td>Expression or list delimiter</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>:</b></td>
+            <td>Host variable indicator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>,</b></td>
+            <td>Item separator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>"</b></td>
+            <td>Quoted identifier delimiter</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>=</b></td>
+            <td>Relational operator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>@</b></td>
+            <td>Remote access indicator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>;</b></td>
+            <td>Statement terminator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>:=</b></td>
+            <td>Assignment operator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>=&gt;</b></td>
+            <td>Association operator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>||</b></td>
+            <td>Concatenation operator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>**</b></td>
+            <td>Exponentiation operator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>&lt;&lt;, &gt;&gt;</b></td>
+            <td>Label delimiter (begin and end)</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>/*, */</b></td>
+            <td>Multi-line comment delimiter (begin and end)</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>--</b></td>
+            <td>Single-line comment indicator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>..</b></td>
+            <td>Range operator</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>&lt;, &gt;, &lt;=, &gt;=</b></td>
+            <td>Relational operators</td>
+            </tr>
+            <tr>
+            <td style="text-align:center;"><b>&lt;&gt;, '=, ~=, ^=</b></td>
+            <td>Different versions of NOT EQUAL</td>
+            </tr>
+            </table>
+            <h2>The PL/SQL Comments</h2>
+            <p>Program comments are explanatory statements that can be included in the PL/SQL code that you write and helps anyone reading its source code. All programming languages allow some form of comments.</p>
+            <p>The PL/SQL supports single-line and multi-line comments. All characters available inside any comment are ignored by the PL/SQL compiler. The PL/SQL single-line comments start with the delimiter -- (double hyphen) and multi-line comments are enclosed by /* and */.</p>
+            <pre class="w3-card-4 w3-light-grey mx-5">
+
+            DECLARE
+               -- variable declaration
+               message  varchar2(20):= 'Hello, World!';
+            BEGIN
+               /*
+               *  PL/SQL executable statement(s)
+               */
+               dbms_output.put_line(message);
+            END;
+            /
+            </pre>
+            <p>When the above code is executed at the SQL prompt, it produces the following result &minus;</p>
+            <pre class="w3-card-4 w3-light-grey mx-5">
+
+            Hello World
+
+            PL/SQL procedure successfully completed.
+            </pre>
+            <h2>PL/SQL Program Units</h2>
+            <p>A PL/SQL unit is any one of the following &minus;</p>
+            <ul class="w3-card pl-5 py-3">
+            <li>PL/SQL block</li>
+            <li>Function</li>
+            <li>Package</li>
+            <li>Package body</li>
+            <li>Procedure</li>
+            <li>Trigger</li>
+            <li>Type</li>
+            <li>Type body</li>
+            </ul>
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="plsql.html" class="w3-button">&#10094; Previous</a>
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="dttyp.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <br>
+        </div>
+      </div>
+        <footer>
+          <p class="mt-3 text-center" style="margin-left:20%;">Author: Deepam Priyadarshi<br>
+Reg_no:- 19BPS1117<br>
+          deepam.priyadarshi2019@vitstudent.ac.in</p>
+        </footer>
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

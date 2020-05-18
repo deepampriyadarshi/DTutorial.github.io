@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>PL/SQL-Data Types</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+
+      <nav class="navbar navbar-expand-sm fixed-top fk">
+        <div class="container " style="max-width : 100% ">
+  <a class="navbar-brand" href="index.html">
+    <img  src="logo.png" alt="Logo" style="width:120px;">
+  </a>
+          <span class="navbar-text navbar-brand">DTutorials</span>
+          <button class="navbar-toggler" data-toggle="collapse" data-target = "#t_id">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse fcolor" id="t_id">
+            <ul class="navbar-nav text-center ml-auto " >
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-3" href="#" id="navbardrop" data-toggle="dropdown">
+                  Topics
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item " href="plsql.html">PL/SQL</a>
+                  <a class="dropdown-item " href="sp.html">Stored Procedure</a>
+                  <a class="dropdown-item " href="sf.html">Stored Function</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link ml-3" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+    </nav>
+
+      <!-- sidebar & content -->
+
+      <div class="w3-sidebar w3-bar-block w3-card-4 w3-amber" style="width:20%; ">
+        <header class="w3-container pb-3" >
+          <h3 class="text-center w3-green p-2" style="box-shadow: 0px 7px 10px #666666; ">PL/SQL Sub-Topics</h3>
+        </header>
+        <a href="plsql.html" class="w3-bar-item w3-button w3-hover-khaki">Overview</a>
+        <a href="basicsyn.html" class="w3-bar-item w3-button w3-hover-khaki">Basic Syntax</a>
+        <a href="dttyp.html" class="w3-bar-item w3-button w3-hover-khaki w3-khaki">&#10095; Data Types</a>
+        <a href="var.html" class="w3-bar-item w3-button w3-hover-khaki ">Variables</a>
+        <a href="loop.html" class="w3-bar-item w3-button w3-hover-khaki">Loops</a>
+        <!-- Dropdown
+        <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red">Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="w3-dropdown-content w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+          </div>
+        </div> -->
+        </div>
+
+        <div style="margin-left:21%;  margin-top: 4.5%; padding-top: 3%; padding-left: 3%; padding-right: 3%">
+          <div class="w3-container">
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="basicsyn.html" class="w3-button">&#10094; Previous</a>
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="var.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <div class="container" >
+              <h1 class="text-center text-capitalize text-success cont" style="font-family: Sofia; max-width: 40%; margin-left: 30%">Data Types</h1>
+            </div>
+          <hr>
+          <p>In this chapter, we will discuss the Data Types in PL/SQL. The PL/SQL variables, constants and parameters must have a valid data type, which specifies a storage format, constraints, and a valid range of values. We will focus on the <b>SCALAR</b> and the <b>LOB</b> data types in this chapter. The other two data types will be covered in other chapters.</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4">
+          <tr>
+          <th style="text-align:center;">S.No</th>
+          <th style="text-align:center;">Category &amp; Description</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">1</td>
+          <td><p><b>Scalar</b></p>
+          <p>Single values with no internal components, such as a <b>NUMBER, DATE,</b> or <b>BOOLEAN</b>.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">2</td>
+          <td><p><b>Large Object (LOB)</b></p>
+          <p>Pointers to large objects that are stored separately from other data items, such as text, graphic images, video clips, and sound waveforms.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">3</td>
+          <td><p><b>Composite</b></p>
+          <p>Data items that have internal components that can be accessed individually. For example, collections and records.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">4</td>
+          <td><p><b>Reference</b></p>
+          <p>Pointers to other data items.</p></td>
+          </tr>
+          </table>
+          <h2>PL/SQL Scalar Data Types and Subtypes</h2>
+          <p>PL/SQL Scalar Data Types and Subtypes come under the following categories &minus;</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4">
+          <tr>
+          <th style="text-align:center;">S.No</th>
+          <th style="text-align:center;">Date Type &amp; Description</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">1</td>
+          <td><p><b>Numeric</b></p>
+          <p>Numeric values on which arithmetic operations are performed.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">2</td>
+          <td><p><b>Character</b></p>
+          <p>Alphanumeric values that represent single characters or strings of characters.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">3</td>
+          <td><p><b>Boolean</b></p>
+          <p>Logical values on which logical operations are performed.</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">4</td>
+          <td><p><b>Datetime</b></p>
+          <p>Dates and times.</p></td>
+          </tr>
+          </table>
+          <p>PL/SQL provides subtypes of data types. For example, the data type NUMBER has a subtype called INTEGER. You can use the subtypes in your PL/SQL program to make the data types compatible with data types in other programs while embedding the PL/SQL code in another program, such as a Java program.</p>
+          <h2>PL/SQL Numeric Data Types and Subtypes</h2>
+          <p>Following table lists out the PL/SQL pre-defined numeric data types and their sub-types &minus;</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4">
+          <tr>
+          <th style="text-align:center;">S.No</th>
+          <th style="text-align:center;">Data Type &amp; Description</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">1</td>
+          <td><p><b>PLS_INTEGER</b></p>
+          <p>Signed integer in range -2,147,483,648 through 2,147,483,647, represented in 32 bits</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">2</td>
+          <td><p><b>BINARY_INTEGER</b></p>
+          <p>Signed integer in range -2,147,483,648 through 2,147,483,647, represented in 32 bits</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">3</td>
+          <td><p><b>BINARY_FLOAT</b></p>
+          <p>Single-precision IEEE 754-format floating-point number</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">4</td>
+          <td><p><b>BINARY_DOUBLE</b></p>
+          <p>Double-precision IEEE 754-format floating-point number</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">5</td>
+          <td><p><b>NUMBER(prec, scale)</b></p>
+          <p>Fixed-point or floating-point number with absolute value in range 1E-130 to (but not including) 1.0E126. A NUMBER variable can also represent 0</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">6</td>
+          <td><p><b>DEC(prec, scale)</b></p>
+          <p>ANSI specific fixed-point type with maximum precision of 38 decimal digits</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">7</td>
+          <td><p><b>DECIMAL(prec, scale)</b></p>
+          <p>IBM specific fixed-point type with maximum precision of 38 decimal digits</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">8</td>
+          <td><p><b>NUMERIC(pre, secale)</b></p>
+          <p>Floating type with maximum precision of 38 decimal digits</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">9</td>
+          <td><p><b>DOUBLE PRECISION</b></p>
+          <p>ANSI specific floating-point type with maximum precision of 126 binary digits (approximately 38 decimal digits)</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">10</td>
+          <td><p><b>FLOAT</b></p>
+          <p>ANSI and IBM specific floating-point type with maximum precision of 126 binary digits (approximately 38 decimal digits)</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">11</td>
+          <td><p><b>INT</b></p>
+          <p>ANSI specific integer type with maximum precision of 38 decimal digits</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">12</td>
+          <td><p><b>INTEGER</b></p>
+          <p>ANSI and IBM specific integer type with maximum precision of 38 decimal digits</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">13</td>
+          <td><p><b>SMALLINT</b></p>
+          <p>ANSI and IBM specific integer type with maximum precision of 38 decimal digits</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">14</td>
+          <td><p><b>REAL</b></p>
+          <p>Floating-point type with maximum precision of 63 binary digits (approximately 18 decimal digits)</p></td>
+          </tr>
+          </table>
+          <p>Following is a valid declaration &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          DECLARE
+             num1 INTEGER;
+             num2 REAL;
+             num3 DOUBLE PRECISION;
+          BEGIN
+             null;
+          END;
+          /
+          </pre>
+          <p>When the above code is compiled and executed, it produces the following result &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          PL/SQL procedure successfully completed
+          </pre>
+          <h2>PL/SQL Character Data Types and Subtypes</h2>
+          <p>Following is the detail of PL/SQL pre-defined character data types and their sub-types &minus;</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4">
+          <tr>
+          <th style="text-align:center;">S.No</th>
+          <th style="text-align:center;">Data Type &amp; Description</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">1</td>
+          <td><p><b>CHAR</b></p>
+          <p>Fixed-length character string with maximum size of 32,767 bytes</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">2</td>
+          <td><p><b>VARCHAR2</b></p>
+          <p>Variable-length character string with maximum size of 32,767 bytes</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">3</td>
+          <td><p><b>RAW</b></p>
+          <p>Variable-length binary or byte string with maximum size of 32,767 bytes, not interpreted by PL/SQL</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">4</td>
+          <td><p><b>NCHAR</b></p>
+          <p>Fixed-length national character string with maximum size of 32,767 bytes</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">5</td>
+          <td><p><b>NVARCHAR2</b></p>
+          <p>Variable-length national character string with maximum size of 32,767 bytes</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">6</td>
+          <td><p><b>LONG</b></p>
+          <p>Variable-length character string with maximum size of 32,760 bytes</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">7</td>
+          <td><p><b>LONG RAW</b></p>
+          <p>Variable-length binary or byte string with maximum size of 32,760 bytes, not interpreted by PL/SQL</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">8</td>
+          <td><p><b>ROWID</b></p>
+          <p>Physical row identifier, the address of a row in an ordinary table</p></td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">9</td>
+          <td><p><b>UROWID</b></p>
+          <p>Universal row identifier (physical, logical, or foreign row identifier)</p></td>
+          </tr>
+          </table>
+          <h2>PL/SQL Boolean Data Types</h2>
+          <p>The <b>BOOLEAN</b> data type stores logical values that are used in logical operations. The logical values are the Boolean values <b>TRUE</b> and <b>FALSE</b> and the value <b>NULL</b>.</p>
+          <p>However, SQL has no data type equivalent to BOOLEAN. Therefore, Boolean values cannot be used in &minus; </p>
+          <ul class="list">
+          <li>SQL statements</li>
+          <li>Built-in SQL functions (such as <b>TO_CHAR</b>)</li>
+          <li>PL/SQL functions invoked from SQL statements</li>
+          </ul>
+          <h2>PL/SQL Datetime and Interval Types</h2>
+          <p>The <b>DATE</b> datatype is used to store fixed-length datetimes, which include the time of day in seconds since midnight. Valid dates range from January 1, 4712 BC to December 31, 9999 AD.</p>
+          <p>The default date format is set by the Oracle initialization parameter NLS_DATE_FORMAT. For example, the default might be 'DD-MON-YY', which includes a two-digit number for the day of the month, an abbreviation of the month name, and the last two digits of the year. For example, 01-OCT-12.</p>
+          <p>Each DATE includes the century, year, month, day, hour, minute, and second. The following table shows the valid values for each field &minus;</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4">
+          <tr>
+          <th style="text-align:center;">Field Name</th>
+          <th style="text-align:center;">Valid Datetime Values</th>
+          <th style="text-align:center;">Valid Interval Values</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">YEAR</td>
+          <td>-4712 to 9999 (excluding year 0)</td>
+          <td style="vertical-align:middle;">Any nonzero integer</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">MONTH</td>
+          <td>01 to 12</td>
+          <td>0 to 11</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">DAY</td>
+          <td>01 to 31 (limited by the values of MONTH and YEAR, according to the rules of the calendar for the locale)</td>
+          <td style="vertical-align:middle;">Any nonzero integer</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">HOUR</td>
+          <td>00 to 23</td>
+          <td>0 to 23</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">MINUTE</td>
+          <td>00 to 59</td>
+          <td>0 to 59</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">SECOND</td>
+          <td>00 to 59.9(n), where 9(n) is the precision of time fractional seconds</td>
+          <td>0 to 59.9(n), where 9(n) is the precision of interval fractional seconds</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">TIMEZONE_HOUR</td>
+          <td>-12 to 14 (range accommodates daylight savings time changes)</td>
+          <td style="vertical-align:middle;">Not applicable</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">TIMEZONE_MINUTE</td>
+          <td>00 to 59</td>
+          <td style="vertical-align:middle;">Not applicable</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">TIMEZONE_REGION</td>
+          <td>Found in the dynamic performance view V$TIMEZONE_NAMES</td>
+          <td style="vertical-align:middle;">Not applicable</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">TIMEZONE_ABBR</td>
+          <td>Found in the dynamic performance view V$TIMEZONE_NAMES</td>
+          <td style="vertical-align:middle;">Not applicable</td>
+          </tr>
+          </table>
+          <h2>PL/SQL Large Object (LOB) Data Types</h2>
+          <p>Large Object (LOB) data types refer to large data items such as text, graphic images, video clips, and sound waveforms. LOB data types allow efficient, random, piecewise access to this data. Following are the predefined PL/SQL LOB data types &minus;</p>
+          <table class="w3-table-all w3-striped my-4 w3-card-4">
+          <tr>
+          <th style="text-align:center; width:20%">Data Type</th>
+          <th style="text-align:center;">Description</th>
+          <th style="text-align:center;">Size</th>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">BFILE</td>
+          <td>Used to store large binary objects in operating system files outside the database.</td>
+          <td>System-dependent. Cannot exceed 4 gigabytes (GB).</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">BLOB</td>
+          <td>Used to store large binary objects in the database.</td>
+          <td>8 to 128 terabytes (TB)</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">CLOB</td>
+          <td>Used to store large blocks of character data in the database.</td>
+          <td>8 to 128 TB</td>
+          </tr>
+          <tr>
+          <td style="text-align:center; vertical-align:middle;">NCLOB</td>
+          <td>Used to store large blocks of NCHAR data in the database.</td>
+          <td>8 to 128 TB</td>
+          </tr>
+          </table>
+          <h2>PL/SQL User-Defined Subtypes</h2>
+          <p>A subtype is a subset of another data type, which is called its base type. A subtype has the same valid operations as its base type, but only a subset of its valid values.</p>
+          <p>PL/SQL predefines several subtypes in package <b>STANDARD</b>. For example, PL/SQL predefines the subtypes <b>CHARACTER</b> and <b>INTEGER</b> as follows &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          SUBTYPE CHARACTER IS CHAR;
+          SUBTYPE INTEGER IS NUMBER(38,0);
+          </pre>
+          <p>You can define and use your own subtypes. The following program illustrates defining and using a user-defined subtype &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          DECLARE
+             SUBTYPE name IS char(20);
+             SUBTYPE message IS varchar2(100);
+             salutation name;
+             greetings message;
+          BEGIN
+             salutation := 'Reader ';
+             greetings := 'Welcome to the World of PL/SQL';
+             dbms_output.put_line('Hello ' || salutation || greetings);
+          END;
+          /
+          </pre>
+          <p>When the above code is executed at the SQL prompt, it produces the following result &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          Hello Reader Welcome to the World of PL/SQL
+
+          PL/SQL procedure successfully completed.
+          </pre>
+          <h2>NULLs in PL/SQL</h2>
+          <p>PL/SQL NULL values represent <b>missing</b> or <b>unknown data</b> and they are not an integer, a character, or any other specific data type. Note that <b>NULL</b> is not the same as an empty data string or the null character value <b>'\0'</b>. A null can be assigned but it cannot be equated with anything, including itself.</p>
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="basicsyn.html" class="w3-button">&#10094; Previous</a>
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="var.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <br>
+        </div>
+        </div>
+<footer>
+          <p class="mt-3 text-center" style="margin-left:20%;">Author: Deepam Priyadarshi<br>
+Reg_no:- 19BPS1117<br>
+          deepam.priyadarshi2019@vitstudent.ac.in</p>
+        </footer>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

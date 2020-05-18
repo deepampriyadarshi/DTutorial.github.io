@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: rgb(255, 140, 26, 0.1)
+}
+.head{
+  margin-top: 80px;
+  text-align: center;
+  font-family: Sofia;
+}
+.navbar{
+  background-color:  rgb(255, 140, 26);
+  font-weight: bold;
+}
+.al{
+  margin-left: 40px;
+}
+.fcolor ul li a{
+  color: black;
+}
+
+.fcolor ul li a:hover{
+  background-color: red;
+  box-shadow: 2px 2px 8px black;
+}
+
+.cd{
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px #e74c3c;
+  transition: all 0.3s ease-in;
+  -webkit-transition:  all 0.3s ease-in;
+  -moz-transition:  all 0.3s ease-in;
+}
+
+.cd:hover{
+  background: #e74c3c;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px #9E9E9E;
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: black;
+  font-size: 16px;
+}

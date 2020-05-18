@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>PL/SQL</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+
+      <nav class="navbar navbar-expand-sm fixed-top fk">
+        <div class="container " style="max-width : 100% ">
+  <a class="navbar-brand" href="index.html">
+    <img  src="logo.png" alt="Logo" style="width:120px;">
+  </a>
+          <span class="navbar-text navbar-brand">DTutorials</span>
+          <button class="navbar-toggler" data-toggle="collapse" data-target = "#t_id">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse fcolor" id="t_id">
+            <ul class="navbar-nav text-center ml-auto " >
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-3" href="#" id="navbardrop" data-toggle="dropdown">
+                  Topics
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item " href="plsql.html">PL/SQL</a>
+                  <a class="dropdown-item " href="sp.html">Stored Procedure</a>
+                  <a class="dropdown-item " href="sf.html">Stored Function</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link ml-3" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+    </nav>
+
+      <!-- sidebar & content -->
+
+      <div class="w3-sidebar w3-bar-block w3-card-4 w3-amber" style="width:20%; ">
+        <header class="w3-container pb-3" >
+          <h3 class="text-center w3-green p-2" style="box-shadow: 0px 7px 10px #666666; ">PL/SQL Sub-Topics</h3>
+        </header>
+        <a href="plsql.html" class="w3-bar-item w3-button w3-hover-khaki w3-khaki">&#10095; Overview</a>
+        <a href="basicsyn.html" class="w3-bar-item w3-button w3-hover-khaki">Basic Syntax</a>
+        <a href="dttyp.html" class="w3-bar-item w3-button w3-hover-khaki">Data Types</a>
+        <a href="var.html" class="w3-bar-item w3-button w3-hover-khaki ">Variables</a>
+        <a href="loop.html" class="w3-bar-item w3-button w3-hover-khaki">Loops</a>
+        <!-- Dropdown
+        <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red">Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="w3-dropdown-content w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+          </div>
+        </div> -->
+        </div>
+
+        <div style="margin-left:21%;  margin-top: 4.5%; padding-top: 3%; padding-left: 3%; padding-right: 3%">
+          <div class="w3-container">
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="basicsyn.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <div class="w3-display-container" style=" max-width: 100%;"  >
+              <h1 class="text-center text-capitalize text-success cont" style="font-family: Sofia; max-width: 40%; margin-left: 30%">Overview</h1>
+            </div>
+          <hr>
+          <p>The PL/SQL programming language was developed by Oracle Corporation in the late 1980s as procedural extension language for SQL and the Oracle relational database. Following are certain notable facts about PL/SQL &minus;</p>
+          <ul class="w3-card-4 pl-5 py-3">
+          <li><p>PL/SQL is a completely portable, high-performance transaction-processing language.</p></li>
+          <li><p>PL/SQL provides a built-in, interpreted and OS independent programming environment.</p></li>
+          <li><p>PL/SQL can also directly be called from the command-line <b>SQL*Plus interface</b>.</p></li>
+          <li><p>Direct call can also be made from external programming language calls to database.</p></li>
+          <li><p>PL/SQL's general syntax is based on that of ADA and Pascal programming language.</p></li>
+          <li><p>Apart from Oracle, PL/SQL is available in <b>TimesTen in-memory database</b> and <b>IBM DB2</b>.</p></li>
+          </ul>
+          <h2>Features of PL/SQL</h2>
+          <p>PL/SQL has the following features &minus;</p>
+          <ul class="w3-card-4 pl-5 py-3">
+          <li>PL/SQL is tightly integrated with SQL.</li>
+          <li>It offers extensive error checking.</li>
+          <li>It offers numerous data types.</li>
+          <li>It offers a variety of programming structures.</li>
+          <li>It supports structured programming through functions and procedures.</li>
+          <li>It supports object-oriented programming.</li>
+          <li>It supports the development of web applications and server pages.</li>
+          </ul>
+          <h2>Advantages of PL/SQL</h2>
+          <p>PL/SQL has the following advantages &minus;</p>
+          <ul class="w3-card-4 pl-5 py-3">
+          <li><p>SQL is the standard database language and PL/SQL is strongly integrated with SQL. PL/SQL supports both static and dynamic SQL. Static SQL supports DML operations and transaction control from PL/SQL block. In Dynamic SQL, SQL allows embedding DDL statements in PL/SQL blocks.</p></li>
+          <li><p>PL/SQL allows sending an entire block of statements to the database at one time. This reduces network traffic and provides high performance for the applications.</p></li>
+          <li><p>PL/SQL gives high productivity to programmers as it can query, transform, and update data in a database.</p></li>
+          <li><p>PL/SQL saves time on design and debugging by strong features, such as exception handling, encapsulation, data hiding, and object-oriented data types.</p></li>
+          <li><p>Applications written in PL/SQL are fully portable.</p></li>
+          <li><p>PL/SQL provides high security level.</p></li>
+          <li><p>PL/SQL provides access to predefined SQL packages.</p></li>
+          <li><p>PL/SQL provides support for Object-Oriented Programming.</p></li>
+          <li><p>PL/SQL provides support for developing Web Applications and Server Pages.</p></li>
+          </ul>
+          <div class="w3-bar ">
+            <a class="nav-link w3-hover-grey w3-right w3-khaki" href="basicsyn.html" class="w3-button w3-right">Next &#10095;</a>
+          </div>
+          <br>
+          </div>
+        </div>
+        <footer>
+          <p class="mt-3 text-center" style="margin-left:20%;">Author: Deepam Priyadarshi<br>
+Reg_no:- 19BPS1117<br>
+          deepam.priyadarshi2019@vitstudent.ac.in</p>
+        </footer>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

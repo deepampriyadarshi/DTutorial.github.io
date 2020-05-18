@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>PL/SQL- Variables</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+
+      <nav class="navbar navbar-expand-sm fixed-top fk">
+        <div class="container " style="max-width : 100% ">
+  <a class="navbar-brand" href="index.html">
+    <img  src="logo.png" alt="Logo" style="width:120px;">
+  </a>
+          <span class="navbar-text navbar-brand">DTutorials</span>
+          <button class="navbar-toggler" data-toggle="collapse" data-target = "#t_id">
+            <span class="navbar-toggler-icon "></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse fcolor" id="t_id">
+            <ul class="navbar-nav text-center ml-auto " >
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+              <!-- Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle ml-3" href="#" id="navbardrop" data-toggle="dropdown">
+                  Topics
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item " href="plsql.html">PL/SQL</a>
+                  <a class="dropdown-item " href="sp.html">Stored Procedure</a>
+                  <a class="dropdown-item " href="sf.html">Stored Function</a>
+                </div>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link ml-3" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+    </nav>
+
+      <!-- sidebar & content -->
+
+      <div class="w3-sidebar w3-bar-block w3-card-4 w3-amber" style="width:20%; ">
+        <header class="w3-container pb-3" >
+          <h3 class="text-center w3-green p-2" style="box-shadow: 0px 7px 10px #666666; ">PL/SQL Sub-Topics</h3>
+        </header>
+        <a href="plsql.html" class="w3-bar-item w3-button w3-hover-khaki">Overview</a>
+        <a href="basicsyn.html" class="w3-bar-item w3-button w3-hover-khaki">Basic Syntax</a>
+        <a href="dttyp.html" class="w3-bar-item w3-button w3-hover-khaki">Data Types</a>
+        <a href="var.html" class="w3-bar-item w3-button w3-hover-khaki w3-khaki"> &#10095; Variables</a>
+        <a href="loop.html" class="w3-bar-item w3-button w3-hover-khaki">Loops</a>
+        <!-- Dropdown
+        <div class="w3-dropdown-hover">
+          <button class="w3-button w3-hover-red">Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="w3-dropdown-content w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+            <a href="#" class="w3-bar-item w3-button">Link</a>
+          </div>
+        </div> -->
+        </div>
+
+        <div style="margin-left:21%;  margin-top: 4.5%; padding-top: 3%; padding-left: 3%; padding-right: 3%">
+          <div class="w3-container">
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="dttyp.html" class="w3-button">&#10094; Previous</a>
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="loop.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <div class="container" >
+              <h1 class="text-center text-capitalize text-success cont" style="font-family: Sofia; max-width: 40%; margin-left: 30%">Variables</h1>
+            </div>
+          <hr>
+          <p>In this chapter, we will discuss Variables in Pl/SQL. A variable is nothing but a name given to a storage area that our programs can manipulate. Each variable in PL/SQL has a specific data type, which determines the size and the layout of the variable's memory; the range of values that can be stored within that memory and the set of operations that can be applied to the variable.</p>
+          <p>The name of a PL/SQL variable consists of a letter optionally followed by more letters, numerals, dollar signs, underscores, and number signs and should not exceed 30 characters. By default, variable names are not case-sensitive. You cannot use a reserved PL/SQL keyword as a variable name.</p>
+          <p>PL/SQL programming language allows to define various types of variables, such as date time data types, records, collections, etc. which we will cover in subsequent chapters. For this chapter, let us study only basic variable types.</p>
+          <h2>Variable Declaration in PL/SQL</h2>
+          <p>PL/SQL variables must be declared in the declaration section or in a package as a global variable. When you declare a variable, PL/SQL allocates memory for the variable's value and the storage location is identified by the variable name.</p>
+          <p>The syntax for declaring a variable is &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          variable_name [CONSTANT] datatype [NOT NULL] [:= | DEFAULT initial_value]
+          </pre>
+          <p>Where, <i>variable_name</i> is a valid identifier in PL/SQL, <i>datatype</i> must be a valid PL/SQL data type or any user defined data type which we already have discussed in the last chapter. Some valid variable declarations along with their definition are shown below &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5 ">
+
+          sales number(10, 2);
+          pi CONSTANT double precision := 3.1415;
+          name varchar2(25);
+          address varchar2(100);
+          </pre>
+          <p>When you provide a size, scale or precision limit with the data type, it is called a <b>constrained declaration</b>. Constrained declarations require less memory than unconstrained declarations. For example &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          sales number(10, 2);
+          name varchar2(25);
+          address varchar2(100);
+          </pre>
+          <h2>Initializing Variables in PL/SQL</h2>
+          <p>Whenever you declare a variable, PL/SQL assigns it a default value of NULL. If you want to initialize a variable with a value other than the NULL value, you can do so during the declaration, using either of the following &minus;</p>
+          <ul class="list">
+          <li><p>The <b>DEFAULT</b> keyword</p></li>
+          <li><p>The <b>assignment</b> operator</p></li>
+          </ul>
+          <p>For example &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          counter binary_integer := 0;
+          greetings varchar2(20) DEFAULT 'Have a Good Day';
+          </pre>
+          <p>You can also specify that a variable should not have a <b>NULL</b> value using the <b>NOT NULL</b> constraint. If you use the NOT NULL constraint, you must explicitly assign an initial value for that variable.</p>
+          <p>It is a good programming practice to initialize variables properly otherwise, sometimes programs would produce unexpected results. Try the following example which makes use of various types of variables &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          DECLARE
+             a integer := 10;
+             b integer := 20;
+             c integer;
+             f real;
+          BEGIN
+             c := a + b;
+             dbms_output.put_line('Value of c: ' || c);
+             f := 70.0/3.0;
+             dbms_output.put_line('Value of f: ' || f);
+          END;
+          /
+          </pre>
+          <p>When the above code is executed, it produces the following result &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          Value of c: 30
+          Value of f: 23.333333333333333333
+
+          PL/SQL procedure successfully completed.
+          </pre>
+          <h2>Variable Scope in PL/SQL</h2>
+          <p>PL/SQL allows the nesting of blocks, i.e., each program block may contain another inner block. If a variable is declared within an inner block, it is not accessible to the outer block. However, if a variable is declared and accessible to an outer block, it is also accessible to all nested inner blocks. There are two types of variable scope &minus;</p>
+          <ul class="list">
+          <li><p><b>Local variables</b> &minus; Variables declared in an inner block and not accessible to outer blocks.</p></li>
+          <li><p><b>Global variables</b> &minus; Variables declared in the outermost block or a package.</p></li>
+          </ul>
+          <p>Following example shows the usage of <b>Local</b> and <b>Global</b> variables in its simple form &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          DECLARE
+             -- Global variables
+             num1 number := 95;
+             num2 number := 85;
+          BEGIN
+             dbms_output.put_line('Outer Variable num1: ' || num1);
+             dbms_output.put_line('Outer Variable num2: ' || num2);
+             DECLARE
+                -- Local variables
+                num1 number := 195;
+                num2 number := 185;
+             BEGIN
+                dbms_output.put_line('Inner Variable num1: ' || num1);
+                dbms_output.put_line('Inner Variable num2: ' || num2);
+             END;
+          END;
+          /
+          </pre>
+          <p>When the above code is executed, it produces the following result &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          Outer Variable num1: 95
+          Outer Variable num2: 85
+          Inner Variable num1: 195
+          Inner Variable num2: 185
+
+          PL/SQL procedure successfully completed.
+          </pre>
+          <h2>Assigning SQL Query Results to PL/SQL Variables</h2>
+          <p>You can use the <b>SELECT INTO</b> statement of SQL to assign values to PL/SQL variables. For each item in the <b>SELECT list</b>, there must be a corresponding, type-compatible variable in the <b>INTO list</b>. The following example illustrates the concept. Let us create a table named CUSTOMERS &minus;</p>
+          <p>(<b>For SQL statements, please refer to the <a href="/sql/index.htm">SQL tutorial</a></b>)</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          CREATE TABLE CUSTOMERS(
+             ID   INT NOT NULL,
+             NAME VARCHAR (20) NOT NULL,
+             AGE INT NOT NULL,
+             ADDRESS CHAR (25),
+             SALARY   DECIMAL (18, 2),
+             PRIMARY KEY (ID)
+          );
+
+          Table Created
+          </pre>
+          <p>Let us now insert some values in the table &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+          VALUES (1, 'Ramesh', 32, 'Ahmedabad', 2000.00 );
+
+          INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+          VALUES (2, 'Khilan', 25, 'Delhi', 1500.00 );
+
+          INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+          VALUES (3, 'kaushik', 23, 'Kota', 2000.00 );
+
+          INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+          VALUES (4, 'Chaitali', 25, 'Mumbai', 6500.00 );
+
+          INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+          VALUES (5, 'Hardik', 27, 'Bhopal', 8500.00 );
+
+          INSERT INTO CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
+          VALUES (6, 'Komal', 22, 'MP', 4500.00 );
+          </pre>
+          <p>The following program assigns values from the above table to PL/SQL variables using the <b>SELECT INTO clause</b> of SQL &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          DECLARE
+             c_id customers.id%type := 1;
+             c_name  customers.name%type;
+             c_addr customers.address%type;
+             c_sal  customers.salary%type;
+          BEGIN
+             SELECT name, address, salary INTO c_name, c_addr, c_sal
+             FROM customers
+             WHERE id = c_id;
+             dbms_output.put_line
+             ('Customer ' ||c_name || ' from ' || c_addr || ' earns ' || c_sal);
+          END;
+          /
+          </pre>
+          <p>When the above code is executed, it produces the following result &minus;</p>
+          <pre class="w3-card-4 w3-light-grey mx-5">
+
+          Customer Ramesh from Ahmedabad earns 2000
+
+          PL/SQL procedure completed successfully
+          </pre>
+            <div class="w3-bar ">
+              <a class="nav-link w3-hover-grey w3-left w3-khaki" href="dttyp.html" class="w3-button">&#10094; Previous</a>
+              <a class="nav-link w3-hover-grey w3-right w3-khaki" href="loop.html" class="w3-button w3-right">Next &#10095;</a>
+            </div>
+            <br>
+            </div>
+</div>
+<footer>
+              <p class="mt-3 text-center" style="margin-left:20%;">Author: Deepam Priyadarshi<br>
+Reg_no:- 19BPS1117<br>
+              deepam.priyadarshi2019@vitstudent.ac.in</p>
+            </footer>
+        </div>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
